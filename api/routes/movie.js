@@ -44,7 +44,7 @@ router.delete("/:id", verify, async (req, res) => {
     if(req.user.isAdmin){
         try {
             await Movie.findByIdAndDelete(req.params.id);
-            res.status(201).json(updatedMovie)
+            res.status(201).json("user has been deleted")
         }catch(err) {
             res.status(500).json(err)
         }
